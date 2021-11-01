@@ -1,7 +1,12 @@
----
-- hosts: all
-  tasks:
-    - name: show host's ip
-      debug:
-        msg: "{{ansible_ssh_host}}"
-
+# ---
+# - hosts: all
+#   tasks:
+#     - name: show host's ip
+#       debug:
+#         msg: "{{ansible_ssh_host}}"
+ - name: Copy script from local to remote machine
+   hosts: server1
+   tasks:
+    - name: Copy  script to remote_machine
+      template: src=script.sh dest=/home/ansiblenode/test/script.sh mode=755
+ 
