@@ -8,3 +8,6 @@
     - name: show host's ip
       debug:
         msg: "{{ansible_ssh_host}}"
+    - name: Execute script on remote_machine
+      become: yes
+      script: /etc/ansible/script.sh
